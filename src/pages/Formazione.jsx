@@ -12,16 +12,9 @@ export default function Formazione() {
           <div className="hero__content reveal">
             <p className="eyebrow">Osteopatia personalizzata</p>
 
-            <h1>
-              Ascolta il
-              <br />
-              corpo
-              <br />
-              <em>
-                Ritrova
-                <br />
-                l&apos;equilibrio
-              </em>
+            <h1 className="hero__title">
+              <span>Ascolta il corpo,</span>
+              <em>Ritrova l&apos;equilibrio</em>
             </h1>
 
             <p className="hero__lead">

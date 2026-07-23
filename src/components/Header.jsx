@@ -21,27 +21,59 @@ export default function Header() {
   }, []);
 
   return (
-    <header className={`header ${scrolled ? "header--scrolled" : ""}`}>
+    <header
+      className={`header ${scrolled ? "header--scrolled" : ""} ${
+        open ? "header--menu-open" : ""
+      }`}
+    >
       <div className="header__inner container-wide">
-        <Link to="/" className="brand" onClick={() => setOpen(false)} aria-label="Torna alla home">
-          <img src="/assets/imgs/logo-marta-icon.png" alt="Logo Marta Simeone" />
+        <Link
+          to="/"
+          className="brand"
+          onClick={() => setOpen(false)}
+          aria-label="Torna alla home"
+        >
+          <img
+            src="/assets/imgs/logo-marta-icon.png"
+            alt="Logo Marta Simeone"
+          />
           <span>
             <strong>Marta Simeone</strong>
             <small>Osteopata</small>
           </span>
         </Link>
 
-        <button className="nav-toggle" onClick={() => setOpen((value) => !value)} aria-expanded={open} aria-label="Apri il menu">
+        <button
+          className="nav-toggle"
+          onClick={() => setOpen((value) => !value)}
+          aria-expanded={open}
+          aria-label="Apri il menu"
+        >
           {open ? <X size={24} /> : <Menu size={24} />}
         </button>
 
-        <nav className={`nav ${open ? "nav--open" : ""}`} aria-label="Navigazione principale">
+        <nav
+          className={`nav ${open ? "nav--open" : ""}`}
+          aria-label="Navigazione principale"
+        >
           {links.map((link) => (
-            <NavLink key={link.to} to={link.to} onClick={() => setOpen(false)} className={({ isActive }) => isActive ? "nav__link nav__link--active" : "nav__link"}>
+            <NavLink
+              key={link.to}
+              to={link.to}
+              onClick={() => setOpen(false)}
+              className={({ isActive }) =>
+                isActive ? "nav__link nav__link--active" : "nav__link"
+              }
+            >
               {link.label}
             </NavLink>
           ))}
-          <a className="button button--small" href="https://wa.me/393493590667" target="_blank" rel="noreferrer">
+          <a
+            className="button button--small"
+            href="https://wa.me/393493590667"
+            target="_blank"
+            rel="noreferrer"
+          >
             Prenota ora
           </a>
         </nav>

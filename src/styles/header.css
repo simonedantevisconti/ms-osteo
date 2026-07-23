@@ -37,7 +37,12 @@
 .brand img {
   width: 48px;
   height: 48px;
+  padding: 4px;
   object-fit: contain;
+  border-radius: 50%;
+  transition:
+    background-color 0.25s ease,
+    padding 0.25s ease;
 }
 
 .brand span {
@@ -107,6 +112,19 @@
 @media (max-width: 820px) {
   .header {
     padding: 10px 0;
+  }
+
+  .header--menu-open .brand img {
+    padding: 6px;
+    background: var(--color-primary-deep);
+  }
+
+  .header--menu-open .brand strong {
+    color: var(--color-ink);
+  }
+
+  .header--menu-open .brand small {
+    color: var(--color-primary-deep);
   }
 
   .header--scrolled {
